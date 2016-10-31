@@ -46,7 +46,7 @@ int TStack<type>::GetSize()
 template <class type>
 bool TStack<type>::IsFull()
 {
-	return (count==MSIZE_STACK)
+	return (count==MSIZE_STACK);
 }
 
 template <class type>
