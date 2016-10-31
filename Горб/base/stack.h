@@ -7,7 +7,7 @@ template <class type>
 class TStack
 {
 private:
-  Type *pMem;
+  type *pMem;
   int size;
   int count;
 public:
