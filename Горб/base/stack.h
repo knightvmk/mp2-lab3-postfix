@@ -1,7 +1,7 @@
-﻿#ifndef __STACK_H__
+#ifndef __STACK_H__
 #define __STACK_H__
 
-const int MSIZE_STACK;
+const int MSIZE_STACK=100;
 
 template <class type>
 class TStack
