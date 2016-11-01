@@ -19,7 +19,6 @@ public:
 	type Pop();
 	type Top();
 	void Push(type val);
-	int Prior();
 };
 
 template <class type>
@@ -65,7 +64,7 @@ type TStack<type>::Pop()
 template <class type>
 type TStack<type>::Top()
 {
-	return pMem[(count--)];
+	return pMem[(count-1)];
 }
 
 template <class type>
@@ -74,18 +73,7 @@ void TStack<type>::Push(type val)
 	if (IsFull())
 	{
 		throw ("Fail push");
-		return;
 	}
 	pMem[count++] = val;
-}
-
-template <class type>
-int TStack<type>::Prior()
-{
-	if (Top() == "+" || Top() == "-") return 1;
-	if (Top() == "*" || Top() == "/") return 2;
-	if (Top() == "(") return 3;
-	if (Top() == "0") return 0;
-	else return -1;
 }
 #endif
