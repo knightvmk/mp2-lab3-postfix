@@ -7,7 +7,7 @@ TEST(TStack, operation_pop_push_is_true)
 	a.Push(3);
 	a.Push(4);
 	double k = a.Pop();
-	EXPECT_EQ(3,a.Pop);
+	EXPECT_EQ(3,a.Pop());
 }
 
 TEST(TStack, can_check_isfull_stack)
