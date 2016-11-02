@@ -45,7 +45,7 @@ int TStack<type>::GetSize()
 template <class type>
 bool TStack<type>::IsFull()
 {
-	return (count==MSIZE_STACK);
+	return (count==size);
 }
 
 template <class type>
@@ -57,23 +57,21 @@ bool TStack<type>::IsEmpty()
 template <class type>
 type TStack<type>::Pop()
 {
-	if (count == 0) throw ("Fail pop");
-	return pMem[(count--) - 1];
+	if (IsEmpty()) throw ("Fail Pop. Stack is Empty");
+	if (!IsEmpty()) return pMem[(count--) - 1];
 }
 
 template <class type>
 type TStack<type>::Top()
 {
-	return pMem[(count-1)];
+	if (IsEmpty())	throw ("Fail Top. Stack is empty");
+	if (!IsEmpty())	return pMem[(count - 1)];
 }
 
 template <class type>
 void TStack<type>::Push(type val)
 {
-	if (IsFull())
-	{
-		throw ("Fail push");
-	}
-	pMem[count++] = val;
+	if (IsFull()) throw ("Fail push. Override stack");
+	if (!IsFull())	pMem[count++] = val;
 }
 #endif
