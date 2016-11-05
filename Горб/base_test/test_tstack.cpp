@@ -21,12 +21,6 @@ TEST(TStack, throw_create_stack_with_zero_lenght)
 	ASSERT_ANY_THROW(TStack<int> a(0));
 }
 
-TEST(TStack, throw_cant_pop_from_empty_stack)
-{
-	TStack<int> a(2);
-	ASSERT_ANY_THROW(a.Pop());
-}
-
 TEST(TStack, throw_push_to_override_stack)
 {
 	TStack<int> a(2);
