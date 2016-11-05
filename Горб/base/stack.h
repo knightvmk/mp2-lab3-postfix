@@ -58,20 +58,20 @@ template <class type>
 type TStack<type>::Pop()
 {
 	if (IsEmpty()) throw ("Fail Pop. Stack is Empty");
-	if (!IsEmpty()) return pMem[(count--) - 1];
+	return pMem[(count--) - 1];
 }
 
 template <class type>
 type TStack<type>::Top()
 {
 	if (IsEmpty())	throw ("Fail Top. Stack is empty");
-	if (!IsEmpty())	return pMem[(count - 1)];
+	return pMem[(count - 1)];
 }
 
 template <class type>
 void TStack<type>::Push(type val)
 {
 	if (IsFull()) throw ("Fail push. Override stack");
-	if (!IsFull())	pMem[count++] = val;
+	pMem[count++] = val;
 }
 #endif
