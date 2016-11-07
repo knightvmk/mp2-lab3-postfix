@@ -11,14 +11,16 @@ int main()
   double res;
 
   setlocale(LC_ALL, "Russian");
-  //cout << "Введите арифметическое выражение: ";
+  cout << "Введите арифметическое выражение: ";
+  getline(cin, expression); //true enter 
   //cin >> expression;
-  //cout << expression << endl;
-  cout << "Арифметическое выражение: " << postfix.GetInfix() << endl;
+  cout << "Ваш ввод: "<< expression << endl; 
+  postfix.SetInfix(expression); //set postfix
+  cout << "Арифметическое выражение: " << postfix.GetInfix() << endl; //return with space expression
   postfix.ToPostfix();
-  cout << "Постфиксная форма: " << postfix.GetPostfix() << endl;
+  cout << "Постфиксная форма: " << postfix.GetPostfix() << endl; //inject nospace expression.infix to postfix
   res = postfix.Calculate();
-  cout << res << endl;
-
+  cout << "Результат: " << res << endl;
+  system("pause");
   return 0;
 }
