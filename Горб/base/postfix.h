@@ -8,13 +8,15 @@ using namespace std;
 
 class TPostfix
 {
+private:
   string infix;
   string postfix;
 public:
-  TPostfix()
-  {
-    infix = "a + b";
-  }
+  TPostfix();
+  TPostfix(const string &enter);
+  int prior(char c);
+  void SetInfix(const string &enter);
+  void EraseSpace();
   string GetInfix() { return infix; }
   string GetPostfix() { return postfix; }
   string ToPostfix();
