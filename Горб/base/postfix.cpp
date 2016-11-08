@@ -93,7 +93,7 @@ string TPostfix::ToPostfix()
 		// if (i = infix.size() && !op.IsEmpty())
 	}
 	while (!op.IsEmpty())
-		postfix[j] = op.Pop();
+		postfix[j++] = op.Pop();
 	infix = origin_infix;
 	/*for (register int i = 0; i<postfix.length(); i++) ??not actually
 	{
