@@ -1,19 +1,20 @@
 #ifndef __STACK_H__
 #define __STACK_H__
 
-const int MSIZE_STACK=100;
+const int MSIZE_STACK = 100;
 
 template <class type>
 class TStack
 {
 private:
-  type *pMem;
-  int size;
-  int count;
+	type *pMem;
+	int size;
+	int count;
 public:
 	TStack(int len);
 	~TStack();
 	int GetSize();
+	int GetCount();
 	bool IsFull();
 	bool IsEmpty();
 	type Pop();
@@ -40,12 +41,20 @@ TStack<type>::~TStack()
 
 template <class type>
 int TStack<type>::GetSize()
-{ return size; }
+{
+	return size;
+}
+
+template <class type>
+int TStack<type>::GetCount()
+{
+	return count;
+}
 
 template <class type>
 bool TStack<type>::IsFull()
 {
-	return (count==size);
+	return (count == size);
 }
 
 template <class type>
