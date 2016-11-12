@@ -41,6 +41,28 @@ TEST(TStack, throw_top_from_empty_stack)
 	ASSERT_ANY_THROW(a.Top());
 }
 
+TEST(TStack, can_change_count_after_push)
+{
+	TStack<int> a(3);
+	a.Push(3);
+	EXPECT_EQ(1, a.GetCount());
+}
+
+TEST(TStack, can_change_count_after_pop)
+{
+	TStack<double> b(3);
+	b.Push(5);
+	b.Pop();
+	EXPECT_EQ(0, b.GetCount());
+}
+
+TEST(TStack, operator_top_cant_change_count)
+{
+	TStack<char> a(2);
+	a.Push('m');
+	EXPECT_EQ(1, a.GetCount());
+}
+
 TEST(TStack, operation_pop_push_is_true)
 {
 	TStack<double> a(2);
@@ -92,3 +114,5 @@ TEST(TStack, cant_operation_top_to_change_stack)
 	char r = a.Top();
 	EXPECT_EQ(a.Top(), 'K');
 }
+
+
