@@ -85,7 +85,7 @@ string TPostfix::ToPostfix()
 		{
 			while (op.Top() != '(')
 				postfix[j++] = op.Pop();
-			while (op.Top() =='(') op.Pop();
+		        while (!op.IsEmpty() && op.Top() =='(') op.Pop();
 		}
 		else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '^' || infix[i] == '/' || infix[i] == '(')
 		{
